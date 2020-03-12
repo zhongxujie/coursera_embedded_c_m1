@@ -44,8 +44,11 @@ void main() {
   unsigned char *ptr1;
   ptr1 = test;
   /* Statistics and Printing Functions Go Here */
+  printf("original array is:\n");
   print_array(ptr1, SIZE);
   print_statistics(ptr1, SIZE);
+  printf("array sorted is:\n");
+  print_array(ptr1, SIZE);
 }
 
 
@@ -54,6 +57,7 @@ void print_statistics(unsigned char *ptr, unsigned int size){
   printf("The maximum value of the given array is %d\n", find_maximum(ptr, size));
   printf("The mean value of the given array is %.2f\n",  find_mean(ptr, size));
   printf("The median value of the given array is %.2f\n", find_median(ptr, size));
+  printf("\n");
 }
 
 
@@ -61,6 +65,9 @@ void print_array(unsigned char *ptr, unsigned int size){
   int i;
   for(i = 0; i < size; i++){
     printf("%d\t", *(ptr+i));
+	if((i+1) % 5 == 0){
+		printf("\n");
+	}
   }
   printf("\n");
 }
