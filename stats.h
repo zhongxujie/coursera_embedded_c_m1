@@ -58,7 +58,7 @@ void print_array(unsigned char *ptr, unsigned int size);
  * Return: 
  *     Median of the numbers provided.
  *****************************************************************************/
-unsigned char find_median(unsigned char *ptr, unsigned int size);
+float find_median(unsigned char *ptr, unsigned int size);
 
 /******************************************************************************
  * Function: find_mean
@@ -71,7 +71,7 @@ unsigned char find_median(unsigned char *ptr, unsigned int size);
  * Return: 
  *     Average of the numbers provided.
  *****************************************************************************/
-unsigned char find_mean(unsigned char *ptr, unsigned int size);
+float find_mean(unsigned char *ptr, unsigned int size);
 
 /******************************************************************************
  * Function: find_maximum

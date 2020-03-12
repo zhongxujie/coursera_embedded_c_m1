@@ -52,8 +52,8 @@ void main() {
 void print_statistics(unsigned char *ptr, unsigned int size){
   printf("The minimum value of the given array is %d\n", find_minimum(ptr, size));
   printf("The maximum value of the given array is %d\n", find_maximum(ptr, size));
-  printf("The mean value of the given array is %d\n", find_mean(ptr, size));
-  printf("The median value of the given array is %d\n", find_median(ptr, size));
+  printf("The mean value of the given array is %.2f\n",  find_mean(ptr, size));
+  printf("The median value of the given array is %.2f\n", find_median(ptr, size));
 }
 
 
@@ -65,20 +65,20 @@ void print_array(unsigned char *ptr, unsigned int size){
   printf("\n");
 }
 
-unsigned char find_median(unsigned char *ptr, unsigned int size){
+float find_median(unsigned char *ptr, unsigned int size){
   sort_array(ptr, size);
   if(size%2 == 0){
-    return ((*(ptr+size/2)+*(ptr+size/2-1))/2);
+    return ((float)(*(ptr+size/2)+*(ptr+size/2-1))/2);
   }
   if(size%2 == 1){
-    return (*(ptr+size/2));
+    return ((float)*(ptr+size/2));
   }
 }
  
 
-unsigned char find_mean(unsigned char *ptr, unsigned int size){
+float find_mean(unsigned char *ptr, unsigned int size){
   int i;
-  unsigned char mean = 0;
+  float mean = 0;
   if(ptr == NULL){
     return 0;
   }
@@ -91,7 +91,7 @@ unsigned char find_mean(unsigned char *ptr, unsigned int size){
     mean += *ptr;
     ptr++;
   }
-  return (mean/size);
+  return ((float)mean/size);
 }
 
 
@@ -103,7 +103,7 @@ unsigned char find_maximum(unsigned char *ptr, unsigned int size){
     if(*ptr > max){
       max = *ptr;
     }
-  /*printf("%d\t", max);*/
+
   ptr++;
   }
   return max;
